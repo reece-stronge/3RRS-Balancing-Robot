@@ -4,19 +4,20 @@ from picamera2 import Picamera2
 
 def nothing(x):
     pass
-
 picam2 = Picamera2()
 
+# Configure camera setup
 config = picam2.create_preview_configuration(
     main={"size": (640, 640)},
     sensor={"output_size": (2592, 2592)}
 )
 picam2.configure(config)
 
+# Lock autofocus and start cam
 picam2.set_controls({"AfMode": 2})
-
 picam2.start()
 
+# Create trackbars for HSV colour values
 cv2.namedWindow("Tuning")
 cv2.createTrackbar("L-H", "Tuning", 140, 255, nothing)
 cv2.createTrackbar("L-S", "Tuning", 100, 255, nothing)
@@ -28,11 +29,10 @@ cv2.createTrackbar("U-V", "Tuning", 255, 255, nothing)
 try:
     while True:
         frame = picam2.capture_array()
-        
         display_frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
-        
         hsv = cv2.cvtColor(frame, cv2.COLOR_RGB2HSV)
-        
+
+        # Take lower and upper HSV bounds from trackbars
         lh = cv2.getTrackbarPos("L-H", "Tuning")
         ls = cv2.getTrackbarPos("L-S", "Tuning")
         lv = cv2.getTrackbarPos("L-V", "Tuning")
@@ -42,8 +42,11 @@ try:
         
         lower_bound = np.array([lh, ls, lv])
         upper_bound = np.array([uh, us, uv])
+
+        # Mask HSV values within bounds
         mask = cv2.inRange(hsv, lower_bound, upper_bound)
-        
+
+        # Detect contours, compute bounding rectangle and find centre
         contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
         for cnt in contours:
             if cv2.contourArea(cnt) > 500:
