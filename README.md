@@ -4,7 +4,7 @@
 
 ## 🎯 Overview
 
-This repository contains all of the software and other relevant materials from my MEng final year project, a 3-RRS moving platform that autonomously balances a ball and tracks dynamic setpoints in real time. To achieve this, the project combines inverse kinematics with mechanical design, classical control theory, real-time computer vision and software development, which culminated in a multi-threaded, event-synchronised software architecture that uses PID control to correct the ball's position using camera feedback.
+This repository contains the software and other relevant materials from my MEng final year project, a 3-RRS moving platform that autonomously balances a ball and tracks dynamic setpoints in real time. To achieve this, the project combines inverse kinematics with mechanical design, classical control theory, real-time computer vision and software development, which culminated in a multi-threaded, event-synchronised software architecture that uses PID control to correct the ball's position using camera feedback.
 
 ## 📝 Inverse Kinematics
 
