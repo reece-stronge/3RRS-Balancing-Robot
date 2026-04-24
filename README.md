@@ -10,6 +10,10 @@ This repository contains the software and other relevant materials from my MEng 
 All original bodies found in the CAD directory were newly designed in Autodesk Fusion and can be 3D printed/lasercut.  
 Note the lower links were specifically designed to fit the particular servo horns used for this project.
 
+## 🖥️ MATLAB Kinematics Simulation
+Separate functions define the sets of equations to calculate the necessary motor angle for each leg individually based on a desired orientation.  
+Desired platform pose is defined as its centre height, tilt magnitude and tilt direction in the main solver script, which calculates the necessary motor angles and plots them in 3D vector space to ensure a physically logical pose.
+
 ## ⌨️ Keyboard Manual Control
     keyboard_control.py
 Provides open-loop, discrete manual control of the platform's orientation using threaded keyboard listening to map the positional variables to pre-defined keystrokes:  
