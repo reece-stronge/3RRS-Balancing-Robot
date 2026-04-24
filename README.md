@@ -59,7 +59,7 @@ The core application of the project, responsible for the real-time closed-loop s
 
 ## 🚀 Installation and Usage
 **1. Create and activate a virtual environment**  
-This project was run inside a Python virtual environment to prevent package conflicts on the Raspberry Pi. This is now the required standard for Raspberry Pi S Bookworm which the Raspberry Pi 5 runs. Within a terminal:  
+This project was run inside a Python virtual environment to prevent package conflicts on the Raspberry Pi. This is now the required standard for Raspberry Pi OS Bookworm which the Raspberry Pi 5 runs. Within a terminal:  
 ```
 python3 -m venv --system-site-packages ~/.venv
 source ~/.venv/bin/activate
