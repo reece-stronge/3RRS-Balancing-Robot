@@ -76,5 +76,3 @@ zlabel('Z-axis (m)');
 title(['Height = ', num2str(h, 3), 'm,  Tilt = ', num2str(tilt_theta), ' deg,  Direction = ', num2str(tilt_phi), ' deg,  Motor Angles: ', num2str([angle1, angle2, angle3], 3), ' deg'], 'FontSize', 14);
 legend('-DynamicLegend', 'Location', 'Best');
 hold off;
-
-%% https://uk.mathworks.com/help/matlab/ref/plot3.html
