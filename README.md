@@ -24,7 +24,7 @@ Listening for keyboard input on a separate background thread from the kinematics
 ## ⭕ Fixed Trajectory Following
     fixed_trajectory.py
 Commands the platform to continuously follow a pre-defined trajectory - tilt direction is continuously incremented through 360 degrees while maintaining a fixed height and tilt magnitude.  
-Calculates the execution time of the kinematics in real-time.
+Calculates the execution time of the kinematics when running continuously.
 
 ## 👁️ Computer Vision Calibration
     camera_tuning.py
